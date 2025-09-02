@@ -1,0 +1,22 @@
+import { assertType, expect, test } from "vitest";
+
+import { scoreWordGame } from "./score-word-game.js";
+
+import type { TLetterScores } from "./score-word-game.js";
+
+test("testing scoreWordGame against test 1", () => {
+	const wordList = ["apple", "banana", "cherry", "date", "fig"] as const;
+
+	const letterScores = [...Array(26).keys()].reduce<Record<string, number>>(
+		(scores, i) => {
+			scores[String.fromCharCode(97 + i)] = i + 1;
+			return scores;
+		},
+		{},
+	) as TLetterScores;
+
+	const result = scoreWordGame(wordList, letterScores);
+	const expected = "cherry";
+	expect(result).toStrictEqual(expected);
+	assertType<typeof result>(expected);
+});
