@@ -2,7 +2,7 @@
 	"name": "playground",
 	"version": "1.0.0",
 	"license": "MIT",
-	"author": "Saad Khan",
+	"author": "Abdullah Iqbal",
 	"type": "module",
 	"scripts": {
 		"lint": "eslint . --max-warnings=0 --fix && pnpm format && pnpm spellcheck",
