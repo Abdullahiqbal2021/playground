@@ -8,11 +8,32 @@ const alternatingBrackets = {
 	")": "(",
 	"}": "{",
 	"]": "[",
-};
-export function isValidParenthesis(s: string): boolean {
-	const strArr = s.split("");
+} as const;
+
+type TAlternatingBrackets = typeof alternatingBrackets;
+
+type TIsValidParenthesis<
+	Str extends string,
+	Stack extends unknown[] = [],
+> = Str extends `${infer First}${infer Rest}`
+	? First extends TOpeningBrackets
+		? TIsValidParenthesis<Rest, [First, ...Stack]>
+		: First extends TClosingBrackets
+			? Stack extends [infer FirstOfStack, ...infer RestOfStack]
+				? TAlternatingBrackets[First] extends FirstOfStack
+					? TIsValidParenthesis<Rest, RestOfStack>
+					: false
+				: false
+			: TIsValidParenthesis<Rest, Stack>
+	: Stack["length"] extends 0
+		? true
+		: false;
+
+export const isValidParenthesis = <Str extends string>(
+	s: Str,
+): TIsValidParenthesis<Str> => {
 	const stack: string[] = [];
-	for (const alpha of strArr) {
+	for (const alpha of s) {
 		if (openingBrackets.includes(alpha as TOpeningBrackets)) {
 			stack.push(alpha);
 			continue;
@@ -22,10 +43,10 @@ export function isValidParenthesis(s: string): boolean {
 			if (stack[stack.length - 1] === alternatingBracket) {
 				stack.pop();
 			} else {
-				return false;
+				return false as TIsValidParenthesis<Str>;
 			}
 		}
 	}
-	if (stack.length) return false;
-	return true;
-}
+	if (stack.length) return false as TIsValidParenthesis<Str>;
+	return true as TIsValidParenthesis<Str>;
+};
