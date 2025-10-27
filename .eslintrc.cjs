@@ -70,7 +70,7 @@ const config = {
 		"no-new-object": "warn",
 		"no-new-wrappers": "warn",
 		"no-octal-escape": "warn",
-		"no-param-reassign": "warn",
+		"no-param-reassign": "off",
 		"no-promise-executor-return": "warn",
 		"no-restricted-imports": [
 			"warn",
