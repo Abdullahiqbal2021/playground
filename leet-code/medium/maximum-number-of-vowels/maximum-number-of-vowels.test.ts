@@ -1,4 +1,6 @@
+// cspell:disable
 import { expect, test } from "vitest";
+
 import { maxVowels } from "./maximum-number-of-vowels.js";
 
 test("calculates max vowels for normal case", () => {
