@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/excel-sheet-column-number
 export const titleToNumber = (colTitle: string) => {
 	let res = 0;
 	for (const char of colTitle) {

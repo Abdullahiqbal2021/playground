@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/allow-one-function-call
 export type TJsonValue =
 	| null
 	| boolean
