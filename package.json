@@ -16,7 +16,8 @@
 		"md-csv": "tsx ./scripts/md-links-to-csv/script.ts",
 		"spellcheck": "cspell . --quiet",
 		"diag": "tsc --extendedDiagnostics",
-		"trace": "tsc --generateTrace ./trace && npx @typescript/analyze-trace trace"
+		"trace": "tsc --generateTrace ./trace && npx @typescript/analyze-trace trace",
+		"dev": "tsx watch"
 	},
 	"dependencies": {
 		"chalk": "^5.6.0",
