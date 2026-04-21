@@ -29,11 +29,11 @@ console.log({
 	obj,
 });
 
-var param_2 = obj.pop();
+const param_2 = obj.pop();
 console.log({
 	param_2,
 });
 
-var param_3 = obj.top();
-var param_4 = obj.empty();
+const param_3 = obj.top();
+const param_4 = obj.empty();
 const arr = [12];

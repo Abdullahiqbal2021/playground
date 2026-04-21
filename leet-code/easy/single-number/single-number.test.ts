@@ -1,8 +1,7 @@
-import { assertType, expect, test } from "vitest";
+import { expect, test } from "vitest";
 
 import { singleNumber } from "./single-number.js";
 
-import type { Utils } from "../../../types/utils.types.js";
 
 test("testing singleNumber for test 1", () => {
 	const result = singleNumber([2, 2, 1]);

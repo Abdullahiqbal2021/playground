@@ -190,7 +190,7 @@ test("should test numberToWords", () => {
 	assertType<(typeof test26)["response"]>(test26.expected);
 
 	const test27 = {
-		response: numberToWords(43000 as number),
+		response: numberToWords(43000),
 		expected: "forty three thousand",
 	} as const;
 	expect(test27.response).toStrictEqual(test27.expected);

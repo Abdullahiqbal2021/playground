@@ -1,4 +1,4 @@
-import { assertType, expect, test } from "vitest";
+import { expect, test } from "vitest";
 
 import { addBinary } from "./add-binary.js";
 

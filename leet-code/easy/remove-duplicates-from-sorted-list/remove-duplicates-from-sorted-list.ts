@@ -13,7 +13,7 @@ export const deleteDuplicates = (head: ListNode | null) => {
 	let node = head;
 	while (node) {
 		const nextNode = node.next;
-		if (nextNode && node.val === nextNode.val) node.next = nextNode.next;
+		if (node.val === nextNode?.val) node.next = nextNode.next;
 		else node = node.next;
 	}
 	return head;

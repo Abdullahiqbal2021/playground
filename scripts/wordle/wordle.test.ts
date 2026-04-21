@@ -95,6 +95,6 @@ test.each(TEST_CASES)("testing findWordle", ({ args, results }) => {
 	const response = findWordle({
 		...DEFAULT_ARGS,
 		...args,
-	} as typeof DEFAULT_ARGS);
+	});
 	expect(response).toStrictEqual(results);
 });
