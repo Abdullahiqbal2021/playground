@@ -8,6 +8,8 @@
 		"datastream",
 		"datetime",
 		"fastify",
+		"inorder",
+		"leetcode",
 		"lexo",
 		"luhn",
 		"Nums",
